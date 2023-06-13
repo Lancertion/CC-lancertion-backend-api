@@ -44,7 +44,7 @@ module.exports = {
       if (result) {
         results.password = undefined;
         const jsontoken = sign({ result: results }, "qwe123", {
-          expiresIn: "1h",
+          expiresIn: "2h",
         });
         return res.json({
           success: 1,
