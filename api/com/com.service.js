@@ -1,4 +1,5 @@
 const pool = require("../../config/database");
+const { getUserIdFromToken } = require("../../auth/token_validation");
 
 module.exports = {
   createCommunity: (data, callBack) => {
@@ -14,10 +15,10 @@ module.exports = {
       }
     );
   },
-  sendMessages: (data, roomId, callBack) => {
+  sendMessages: (data, roomId, userId, callBack) => {
     pool.query(
       `INSERT INTO messages (chat_room_id, user_id, content) VALUES (?, ?, ?)`,
-      [roomId, data.userId, data.content],
+      [roomId, userId, data.content],
       (error, results, fields) => {
         if (error) {
           callBack(error);

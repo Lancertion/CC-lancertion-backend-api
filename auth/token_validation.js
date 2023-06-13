@@ -23,4 +23,20 @@ module.exports = {
       });
     }
   },
+
+  getUserIdFromToken: (token) => {
+    try {
+      // Verify and decode the token
+      const decoded = jwt.verify(token, "qwe123");
+
+      // Extract the user ID from the decoded token
+      const userId = decoded.userId;
+
+      return userId;
+    } catch (error) {
+      // Handle any errors during token verification or decoding
+      console.error("Error decoding JWT:", error.message);
+      return null;
+    }
+  },
 };

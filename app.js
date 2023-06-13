@@ -5,6 +5,7 @@ const userRouter = require("./api/users/user.router");
 const comRouter = require("./api/com/com.router");
 
 app.use(express.json());
+
 app.use("/api/users", userRouter);
 app.use("/api/com", comRouter);
 const port = process.env.PORT || 4000;
