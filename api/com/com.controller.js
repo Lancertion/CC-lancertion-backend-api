@@ -85,7 +85,7 @@ module.exports = {
       }
       return res.json({
         success: 1,
-        message: "Messages deleted successfully",
+        message: "Post deleted successfully",
       });
     });
   },
@@ -166,7 +166,7 @@ module.exports = {
       }
       return res.json({
         success: 1,
-        message: "Reply deleted successfully",
+        message: "Comment deleted successfully",
       });
     });
   },

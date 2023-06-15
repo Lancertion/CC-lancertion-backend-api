@@ -12,7 +12,7 @@ router.get("/allusers", checkToken, getUsers);
 router.post("/create", createUser);
 router.get("/:id", checkToken, getUserByUserId);
 router.post("/login", login);
-router.put("/update", checkToken, updateUsers);
+router.put("/update/:id", checkToken, updateUsers);
 router.delete("/:id", checkToken, deleteUser);
 
 module.exports = router;

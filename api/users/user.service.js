@@ -66,10 +66,22 @@ module.exports = {
       }
     );
   },
-  updateUser: (data, callBack) => {
+  // updateUser: (data, callBack) => {
+  //   pool.query(
+  //     `update account set fullName=?, email=?, password=?, number=? where id = ?`,
+  //     [data.full_name, data.email, data.password, data.number, data.id],
+  //     (error, results, fields) => {
+  //       if (error) {
+  //         callBack(error);
+  //       }
+  //       return callBack(null, results[0]);
+  //     }
+  //   );
+  // },
+  updateUser: (data, id, callBack) => {
     pool.query(
       `update account set fullName=?, email=?, password=?, number=? where id = ?`,
-      [data.full_name, data.email, data.password, data.number, data.id],
+      [data.full_name, data.email, data.password, data.number, id],
       (error, results, fields) => {
         if (error) {
           callBack(error);
