@@ -78,7 +78,7 @@ module.exports = {
   },
   getComment: (postId, callBack) => {
     pool.query(
-      `SELECT * FROM comment WHERE post_id = ?`,
+      `SELECT p.comment, p.id as comment_id, p.tanggal, u.id as user_id, u.fullName as pengirim FROM comment p INNER JOIN account u ON p.user_id = u.id WHERE post_id = ?`,
       [postId],
       (error, results, fields) => {
         if (error) {

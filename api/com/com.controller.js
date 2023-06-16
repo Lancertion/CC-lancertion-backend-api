@@ -101,7 +101,7 @@ module.exports = {
     }
 
     if (!body.comment) {
-      return res.status(400).json({ error: "komentar tidak boleh kosong." });
+      return res.status(400).json({ error: "comment tidak boleh kosong." });
     }
 
     const decodedToken = jwt.decode(token); // Decode the token payload
@@ -143,7 +143,7 @@ module.exports = {
     const body = req.body;
     const commentId = req.params.commentId;
     if (!body.comment) {
-      return res.status(400).json({ error: "content tidak boleh kosong." });
+      return res.status(400).json({ error: "comment tidak boleh kosong." });
     }
     updateComment(body, commentId, (err, results) => {
       if (err) {
